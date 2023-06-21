@@ -1,4 +1,19 @@
 <!--index.wxml-->
-<view class="container">
-  Weixin
+<!-- <wxs module="test" src="./index.wxs"></wxs> -->
+
+<view class="logo">
+  <view class="background"></view>
+  <image class="foreground" src="../../public/symbols/event_note.svg"></image>
+</view>
+<view class="house_list">
+  <house wx:for="{{house}}" wx:key="1" house-number="{{item.index}}" house-name="{{item.location}}" 
+  id="{{item.index}}" selected="{{selectedIndex == index}}" bind:houseselected="longPress" bind:tap="tap"></house>
+</view>
+<view class="btn_group">
+  <sbtn wx:for="{{btn}}" wx:key="index" btn-type="{{item}}" tapped-btn="{{tappedButton}}" bind:showinput="showInput"></sbtn>
+</view>
+<view class="input_view {{display}}" bind:tap="hideInput" >
+</view>
+<view class="input_group {{display}}" >
+  <cinput tapped-btn="{{tappedButton}}" />
 </view>

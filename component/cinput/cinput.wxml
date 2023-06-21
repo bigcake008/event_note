@@ -1,0 +1,8 @@
+<!--component/cinput/cinput.wxml-->
+<view wx:if="{{tappedBtn == 'add'}}" class="input_block">
+  <input class="input_num" placeholder="编号" type="number" focus="{{true}}" cursor-spacing="20"/>
+  <input class="input_name" placeholder="地址名称" cursor-spacing="20"/>
+</view>
+<view wx:elif="{{tappedBtn == 'search'}}" class="input_block">
+  <input class="input_name" placeholder="楼栋编号+房间号 (1101)" focus="{{true}}" cursor-spacing="20" />
+</view>

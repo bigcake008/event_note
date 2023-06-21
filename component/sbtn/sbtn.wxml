@@ -1,0 +1,4 @@
+<!--component/sbtn/sbtn.wxml-->
+<view class="{{highlight}}" hover-class="hover {{btnType}}_hover" hover-stay-time="120" bind:tap="onTap">
+  <image class="btn_image" src="../../public/symbols/{{btnType}}.svg"></image>
+</view>

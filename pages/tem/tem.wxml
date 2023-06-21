@@ -1,0 +1,3 @@
+<!--pages/tem.wxml-->
+<text>{{id}}</text>
+<text>hello world goodbye world</text>

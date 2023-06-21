@@ -1,0 +1,38 @@
+var changePosition = function (newVal, oldVal, ownerInstance, instance) {
+  if (newVal == undefined) {
+    return;
+  };
+  console.log(oldVal);
+  var listLength = instance.getDataset().length;
+  var setBottom = 155;
+  var target = ownerInstance.selectComponent('#house_' + newVal);
+  console.log(target.getComputedStyle());
+  var targetIndex = parseInt(newVal) + 1;
+  if (targetIndex < listLength) {
+    setBottom += (listLength - targetIndex) * 138;
+  };
+  instance.setStyle({
+    'bottom': setBottom + 'rpx'
+  });
+  target.setStyle({
+    'background-color': '#ecebeb'
+  })
+};
+var selectHouse = function (evt, ownIns) {
+  var target = evt.instance;
+  var targetButton = target.selectComponent('.button');
+  console.log('long press');
+  var data = target.getDataset();
+  console.log(data.id);
+  // targetButton.setStyle({
+  //   'display': 'none'
+  // })
+}
+var test = function (evt) {
+  console.log(evt.currentTarget.dataset.id);
+};
+
+module.exports = {
+  selectHouse: selectHouse,
+  test: test
+ };

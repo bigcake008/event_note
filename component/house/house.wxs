@@ -1,0 +1,16 @@
+var displayButton = function(evt, ownIns) {
+  var buttonGroup = ownIns.selectComponent('.edit_delete_btn');
+  buttonGroup.setStyle({
+    'display': 'block'
+  });
+};
+var hideButton = function(evt, ownIns) {
+  var buttonGroup = ownIns.selectComponent('.edit_delete_btn');
+  buttonGroup.setStyle({
+    'display': 'none'
+  });
+};
+
+module.exports = {
+  displayButton: displayButton
+};
