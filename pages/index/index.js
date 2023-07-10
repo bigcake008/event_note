@@ -1,43 +1,97 @@
 // index.js
 let house = 
-    [{'index': 1, 'location': '梨园大道二巷一号'},
-    {'index': 22, 'location': '松柏路14巷3号'},
+    [
+    {'index': 1, 'location': 'hahahaha'},
+    {'index': 22, 'location': 'generator and iterator'},
     {'index': 99999, 'location': 'hello world, good night, good bye!!!'},
-    {'index': 100, 'location': '松柏路22巷6号'},
+    {'index': 100, 'location': 'proxy confuse people'},
     ];
-let btn = ['add', 'search', 'edit', 'delete'];
+let btn = ["add_house", "search_info", "edit_house", "remove_house"];
+// getApp return global context
+var app = getApp();
+console.log(`global this: ${this}`);
 
 Page({
   data: {
     house: house,
-    display: 'hide',
+    glassHeight: 0,
     btn: btn,
-    tappedButton: '',
+    tappedButton: "",
+    focus: "",
   },
 
-  tap: function (evt) {
-    wx.navigateTo({
-      url: `../tem/tem?id=${evt.currentTarget.id}`,
-    })
-    console.log(evt);
+  handleHouseTap: function(evt) {
+    if (this.data.tappedButton === "remove_house") {
+      console.log("house remove");
+    } else if (this.data.tappedButton === "edit_house") {
+      console.log("house edit");
+    } else {
+      const data = evt.target.dataset;
+      wx.navigateTo({
+        url: `../housePage/housePage?index=${data.index}&location=${data.location}`,
+      })
+    }
   },
 
-  longPress: function (evt) {
-    console.log('long press');
-    console.log(evt.detail);
-  },
+  // handleShowInput: function(evt) {
+  //   console.log(evt);
+  //   const detail = evt.detail;
+  //   let focus = "";
+  //   if (detail.bt === "remove" || detail.bt === "edit") {
+  //     focus = "focus";
+  //   }
+  //   this.setData({
+  //     tappedButton: detail.bn,
+  //     displayInput: '',
+  //     focus
+  //   })
+  // },
 
-  showInput: function (evt) {
+  handleAddHouse: function(evt) {
+    console.log("add house");
     this.setData({
-      tappedButton: evt.detail.tb,
-      display: 'show'
+      tappedButton: evt.type,
     })
   },
 
-  hideInput: function (evt) {
+  handleSearchInfo: function(evt) {
+    console.log("search info");
     this.setData({
-      tappedButton: '',
-      display: 'hide'
+      tappedButton: evt.type,
+    })
+  },
+
+  handleEditHouse: function(evt) {
+    console.log("edit house");
+    this.setData({
+      tappedButton: evt.type,
+    })
+  },
+
+  handleRemoveHouse: function(evt) {
+    console.log("remove house");
+    this.setData({
+      tappedButton: evt.type,
+    })
+  },
+
+  handleShowInput: function(evt) {
+    let focus = "";
+    const tb = this.data.tappedButton;
+    if (tb === "edit_house" || tb === "remove_house") {
+      focus = "focus";
+    }
+    this.setData({
+      glassHeight: app.windowHeight,
+      focus: focus
+    })
+  },
+
+  handleHideInput: function(evt) {
+    this.setData({
+      tappedButton: "",
+      glassHeight: 0,
+      focus: ""
     })
   },
 })

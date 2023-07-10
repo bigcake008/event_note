@@ -1,7 +1,0 @@
-/* pages/tem.wxss */
-text {
-  display: inline-block;
-  height: 100rpx;
-  width: 100%;
-  overflow: hidden;
-}

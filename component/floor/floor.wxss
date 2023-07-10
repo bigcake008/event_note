@@ -1,0 +1,67 @@
+/* component/floor.wxss */
+.floor {
+  margin: 0 5%;
+  margin-top: 2%;
+  width: 90%;
+  height: 85rpx;
+  border: black solid 5rpx;
+  border-radius: 10rpx;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  overflow: hidden;
+}
+
+.expand_floor {
+  height: 100%;
+}
+
+.floor_circle {
+  width: 90rpx;
+  height: 80rpx;
+  border-radius: 15rpx;
+}
+
+.floor_image {
+  width: 80rpx;
+  height: 80rpx;
+  vertical-align: text-bottom;
+}
+
+.counter_hover {
+  background-color: #fff0dd;
+}
+
+.floor_number {
+  position: relative;
+  top: -68rpx;
+  left: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  overflow: overlay;
+  font-size: 40rpx;
+  text-align: center;
+  color: #f9ba6c;
+}
+
+.rooms_group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* .btn_group {
+  display: flex;
+} */
+
+.display {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.focus {
+  position: relative;
+  z-index: 1;
+}

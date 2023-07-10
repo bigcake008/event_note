@@ -2,9 +2,6 @@
 /* house_list_section */
 .house {
   height: 100rpx;
-  /* margin: 20rpx;
-  padding: 20rpx;
-  padding-bottom: 0; */
   margin: 0 0 20rpx 40rpx;
   background-clip: content-box;
 }
@@ -17,26 +14,41 @@
   display: inline-block;
   overflow: overlay;
   white-space: nowrap;
-  /* text-overflow: ellipsis; */
 }
 .house_number {
-  width: 60rpx;
-  height: 60rpx;
   position: relative;
   top: -10rpx;
   left: -80rpx;
+  width: 60rpx;
+  height: 60rpx;
   font-size: 35rpx;
   text-align: center;
 }
 .house_name {
-  width: 500rpx;
-  height: 60rpx;
   position: relative;
   left: -50rpx;
+  width: 500rpx;
+  height: 60rpx;
   font-size: 40rpx;
 }
 .hover {
   background-color: #ecebeb;
   background-clip: content-box;
   border-radius: 15rpx;
+}
+
+.remove_house {
+  color: #ed414c;
+}
+
+.remove_house_hover {
+  background-color: #ffd7d5;
+}
+
+.edit_house {
+  color: #54aeff;
+}
+
+.edit_house_hover {
+  background-color: #ddf4ff;
 }

@@ -1,10 +1,7 @@
-// component/house/house.js
+// component/room/room.js
 Component({
   properties: {
     index: {
-      type: String,
-    },
-    location: {
       type: String,
     },
     tappedButton: {
@@ -13,8 +10,10 @@ Component({
   },
 
   data: {
+
   },
-  
+
   methods: {
+
   }
 })

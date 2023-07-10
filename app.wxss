@@ -9,7 +9,7 @@
   box-sizing: border-box;
 } 
 
-@font-face {
+/* @font-face {
   font-family: 'Material Symbols Outlined';
   font-style: normal;
   font-weight: 400;
@@ -29,4 +29,4 @@
   word-wrap: normal;
   direction: ltr;
   -webkit-font-smoothing: antialiased;
-}
+} */

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "sbtn": "/component/sbtn/sbtn",
+    "house": "/component/house/house",
+    "floor": "/component/floor/floor"
+  },
+  "navigationBarTitleText": "house"
+}

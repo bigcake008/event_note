@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/tem/tem"
+    "pages/housePage/housePage",
+    "pages/roomPage/roomPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -10,5 +11,6 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
 }

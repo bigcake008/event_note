@@ -1,39 +1,39 @@
 // component/sbtn/sbtn.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-    btnType: {
+    btnName: {
       type: String,
     },
     tappedBtn: {
       type: String,
-    }
-
+    },
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-    highlight: ''
+    highlight: "",
+    btnType: ""
   },
 
-  /**
-   * 组件的方法列表
-   */
-  methods: {
-    onTap() {
-      this.triggerEvent('showinput', {tb: this.data.btnType})
+  lifetimes: {
+    attached: function() {
+      const btnType = this.properties.btnName.split("_")[0];
+      this.setData({btnType});
     }
+  },
+
+  methods: {
+    handleTap: function() {
+      this.triggerEvent(this.properties.btnName, 
+                        {},
+                        {bubbles: true});
+    },
   },
 
   observers: {
+    // highlight the tapped button
     'tappedBtn': function(tb) {
-      // console.log(tb);
       this.setData({
-        highlight: tb == this.data.btnType? tb: ''
+        highlight: tb == this.properties.btnName ? this.data.btnType : ""
       })
     }
   }

@@ -1,37 +1,45 @@
 /* component/sbtn/sbtn.wxss */
+.btn_box {
+  width: 85rpx;
+  height: 85rpx;
+  border-radius: 15rpx;
+  text-align: center;
+  background-clip: content-box;
+}
+
  .btn_image{
-  margin-right: 10rpx;
   width: 80rpx;
   height: 80rpx;
 }
-.hover {
-  background-clip: content-box;
-  border-radius: 15rpx;
-}
+
 .add_hover {
   background-color: #dcfae3;
 }
-.search_hover {
+
+.search_hover, .counter_hover{
   background-color: #fff0dd;
 }
+
 .edit_hover {
   background-color: #ddf4ff;
 }
-.delete_hover {
+
+.remove_hover {
   background-color: #ffd7d5;
 }
+
 .add {
   background-color: #dcfae3;
-  background-clip: content-box;
-  border-radius: 15rpx;
 }
+
 .search {
   background-color: #fff0dd;
-  background-clip: content-box;
-  border-radius: 15rpx;
 }
+
 .edit {
   background-color: #ddf4ff;
-  background-clip: content-box;
-  border-radius: 15rpx;
+} 
+
+.remove {
+  background-color: #ffd7d5;
 }

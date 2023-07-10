@@ -4,6 +4,6 @@
     "sbtn": "/component/sbtn/sbtn",
     "cinput": "/component/cinput/cinput"
   },
-  "navigationBarTitleText": "出租记事本",
+  "navigationBarTitleText": "event_note",
   "pageOrientation": "auto"
 }

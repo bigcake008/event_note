@@ -1,8 +1,17 @@
 <!--component/house/house.wxml-->
-<wxs module="test" src="./house.wxs"></wxs>
+<wxs module="test"
+     src="./house.wxs"
+></wxs>
 
-<view class="house" hover-class="hover" hover-stay-time="120" bind:longpress="longPress">
-  <image class="house_image" src="../../public/symbols/cottage.svg"></image>
-  <text class="house_number house_text">{{houseNumber}}</text>
-  <text class="house_name house_text">{{houseName}}</text>
+<view class="house" 
+      hover-class="hover {{tappedButton}}_hover" 
+      hover-stay-time="120" 
+      bind:longpress="longPress"
+>
+  <image class="house_image" 
+         src="../../public/symbols/cottage.svg"
+  ></image>
+  <text class="house_number house_text {{tappedButton}}"
+  >{{index}}</text>
+  <text class="house_name house_text">{{location}}</text>
 </view>

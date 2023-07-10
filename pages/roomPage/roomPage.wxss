@@ -1,0 +1,26 @@
+/* pages/roomPage/roomPage.wxss */
+/* .house_image {
+  width: 100rpx;
+  height: 100rpx;
+  vertical-align: text-bottom;
+}
+
+.house_number {
+  position: relative;
+  top: -10rpx;
+  left: -80rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  overflow: overlay;
+  font-size: 35rpx;
+  text-align: center;
+} */
+.root {
+  margin-top: 100rpx;
+}
+.head {
+  width: 100%;
+  text-align: center;
+  font-size: 60rpx;
+}

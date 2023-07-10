@@ -1,8 +1,12 @@
 /* logo section */
+.root {
+  margin-top: 100rpx;
+}
+
 .logo {
+  margin: 20rpx;
   display: flex;
   justify-content: space-around;
-  margin: 20rpx;
 }
 .foreground {
   position: absolute;
@@ -29,7 +33,6 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 100%;
   backdrop-filter: blur(3px);
 }
 
@@ -38,10 +41,7 @@
   margin-left: 60rpx;
 }
 
-.show {
-  left: 0;
-}
-
-.hide {
-  left: 100%;
+.focus {
+  position: relative;
+  z-index: 1;
 }

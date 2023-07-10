@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "sbtn": "/component/sbtn/sbtn",
+    "room": "/component/room/room",
+    "cinput": "/component/cinput/cinput"
+  }
+}
