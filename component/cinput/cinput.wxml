@@ -28,6 +28,6 @@
   <input placeholder="房间号"
          type="number"
          focus="{{true}}"
-         cursor-spacing="20"
+         cursor-spacing="60"
   />
 </view>

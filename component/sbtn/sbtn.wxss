@@ -5,6 +5,7 @@
   border-radius: 15rpx;
   text-align: center;
   background-clip: content-box;
+  display: block;
 }
 
  .btn_image{
@@ -16,7 +17,7 @@
   background-color: #dcfae3;
 }
 
-.search_hover, .counter_hover{
+.search_hover {
   background-color: #fff0dd;
 }
 

@@ -4,6 +4,7 @@
   height: 100rpx;
   margin: 0 0 20rpx 40rpx;
   background-clip: content-box;
+  display: flex;
 }
 .house_image {
   width: 100rpx;
@@ -11,13 +12,12 @@
   vertical-align: text-bottom;
 }
 .house_text {
-  display: inline-block;
-  overflow: overlay;
+  position: relative;
+  top: 30rpx;
   white-space: nowrap;
+  overflow: hidden;
 }
 .house_number {
-  position: relative;
-  top: -10rpx;
   left: -80rpx;
   width: 60rpx;
   height: 60rpx;
@@ -25,8 +25,7 @@
   text-align: center;
 }
 .house_name {
-  position: relative;
-  left: -50rpx;
+  left: -40rpx;
   width: 500rpx;
   height: 60rpx;
   font-size: 40rpx;

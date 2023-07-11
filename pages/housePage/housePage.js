@@ -47,7 +47,6 @@ Page({
     index: "",
     location: "",
     floors: floors,
-    glassHeight: 0,
     tappedButton: "",
     focusIndex: 0,
   },
@@ -59,56 +58,44 @@ Page({
     })
   },
 
+  handleHouseTap: function() {
+    console.log("house tapped");
+    wx.navigateBack();
+  },
+
   handleAddFloor: function(evt) {
     const n = this.data.floors.length;
     this.data.floors.unshift({
-                              index: n+1, 
-                              sign: `counter_${n+1}`, 
-                              rooms: []
-                              });
-    this.setData({
-      floors: this.data.floors
-    })
+      index: n+1, 
+      sign: `counter_${n+1}`, 
+      rooms: []
+    });
+    this.setData({floors: this.data.floors});
   },
 
   handleRemoveFloor: function(evt) {
     this.data.floors.shift();
-    this.setData({
-      floors: this.data.floors
-    })
+    this.setData({floors: this.data.floors});
   },
   
-  handleShowInput: function(evt) {
-    this.setData({
-      glassHeight: app.windowHeight,
-      // focusIndex: evt.detail,
-    })
-  },
-
-  handleHideInput: function(evt) {
-    this.setData({
-      glassHeight: 0,
-      tappedButton: "",
-    })
-  },
-
   handleRoomTap: function(evt) {
     const hid = this.data.index;
     const rid = evt.detail.index;
     wx.navigateTo({
       url: `../roomPage/roomPage?hid=${hid}&rid=${rid}`,
-    })
+    });
   },
 
-  handleFocusFloor: function(evt) {
+  handleFocus: function(evt) {
     let focusIndex = evt.detail;
-    if (this.data.focusIndex === focusIndex) {
-      focusIndex = 0;
-    }
-    this.setData({focusIndex: focusIndex, 
-                  glassHeight: 0,
-                  tappedButton: ""
-                });
+    this.setData({focusIndex: evt.detail});
+  },
+
+  handleUnfocus: function() {
+    this.setData({
+      focusIndex: 0,
+      tappedButton: ""
+    });
   }
 
 })

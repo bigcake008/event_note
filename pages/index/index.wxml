@@ -1,47 +1,50 @@
 <!--index.wxml-->
-<wxs module="test" src="../wxs/index.wxs"></wxs>
-<view class="root" data-id="9998">
-  <view class="logo">
-    <view class="background"></view>
-    <image 
-          class="foreground" 
-          src="../../public/symbols/event_note.svg"
-    ></image>
+<!-- <wxs module="test" src="../wxs/index.wxs"></wxs> -->
+<scroll-view class="scroll_view"
+             type="custom"
+             scroll-y
+>
+  <view class="root" data-id="9998">
+    <view class="logo">
+      <view class="background"></view>
+      <image 
+            class="foreground" 
+            src="../../public/symbols/event_note.svg"
+      ></image>
+    </view>
+    <view class="house_list {{focus}}">
+      <house 
+            wx:for="{{house}}"
+            wx:key="index" 
+            index="{{item.index}}" 
+            location="{{item.location}}"
+            tappedButton="{{tappedButton}}" 
+            data-index="{{item.index}}"
+            data-location="{{item.location}}"
+            bind:tap="handleHouseTap"
+      ></house>
+    </view>
+    <view class="btn_group"
+          bind:add_house="handleAddHouse"
+          bind:search_info="handleSearchInfo"
+          bind:edit_house="handleEditHouse"
+          bind:remove_house="handleRemoveHouse"
+    >
+      <sbtn 
+            wx:for="{{btn}}" 
+            wx:key="index" 
+            btn-name="{{item}}" 
+            tapped-btn="{{tappedButton}}" 
+            bind:tap="handleFocus"
+      ></sbtn>
+    </view>
+   <view wx:if="{{tappedButton != ''}}"
+         class="input_group focus" 
+    >
+      <cinput tapped-btn="{{tappedButton}}" />
+    </view>
+    <view class="glass_view {{tappedButton == '' ? 'hide' : ''}}"
+          bind:tap="handleUnfocus" 
+    ></view>
   </view>
-  <view class="house_list {{focus}}">
-    <house 
-          wx:for="{{house}}"
-          wx:key="index" 
-          index="{{item.index}}" 
-          location="{{item.location}}"
-          tappedButton="{{tappedButton}}" 
-          data-index="{{item.index}}"
-          data-location="{{item.location}}"
-          bind:tap="handleHouseTap"
-    ></house>
-  </view>
-  <view class="btn_group"
-        bind:add_house="handleAddHouse"
-        bind:search_info="handleSearchInfo"
-        bind:edit_house="handleEditHouse"
-        bind:remove_house="handleRemoveHouse"
-  >
-    <sbtn 
-          wx:for="{{btn}}" 
-          wx:key="index" 
-          btn-name="{{item}}" 
-          tapped-btn="{{tappedButton}}" 
-          bind:tap="handleShowInput"
-    ></sbtn>
-  </view>
-  <view class="input_view"
-        bind:tap="handleHideInput" 
-        prop="{{glassHeight}}"
-        change:prop="{{test.setGlassHeight}}"
-  ></view>
-  <view wx:if="{{glassHeight != 0}}"
-        class="input_group" 
-  >
-    <cinput tapped-btn="{{tappedButton}}" />
-  </view>
-</view>
+</scroll-view>

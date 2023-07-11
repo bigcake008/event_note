@@ -1,37 +1,4 @@
 /* component/room/room.wxss */
-.room_box {
-  width: 90rpx;
-  border: black solid 3rpx;
-  border-radius: 10rpx;
-  margin: 10rpx;
-  height: 62rpx;
-  text-align: center;
-  font-size: 40rpx;
-}
-
-.room_text {
+.roo.room_text {
   width: 100%;
-  display: inline-block;
-  overflow: overlay;
-}
-
-.hover {
-  background-color: #ecebeb;
-  background-clip: content-box;
-}
-
-.remove_room {
-  color: #ed414c;
-}
-
-.remove_room_hover {
-  background-color: #ffd7d5;
-}
-
-.edit_room {
-  color: #54aeff;
-}
-
-.edit_room_hover {
-  background-color: #ddf4ff;
 }

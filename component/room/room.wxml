@@ -1,7 +1,4 @@
 <!--component/room/room.wxml-->
-<view class="room_box {{tappedButton}}"
-      hover-class="hover {{tappedButton}}_hover"
-      hover-stay-time="120"
->
+<view >
   <text class="room_text">{{index}}</text>
 </view>

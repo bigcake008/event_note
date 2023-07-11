@@ -24,48 +24,35 @@ Component({
 
   methods: {
     handleExpandFloor: function() {
-      if (this.data.expand) {
-        this.triggerEvent("hideinput", {}, {bubbles: true});
+      // disable the expand button when the floor focused
+      if (this.data.index === this.data.focusIndex) {
+        return;
        }
-      console.log("expand");
       this.setData({expand: !this.data.expand});
     },
 
-    // handleShowInput: function(evt) {
-    //   this.setData({tappedButton: evt.detail.tb});
-    //   this.triggerEvent("showinput", this.data.index);
-    // },
-
-    handleShowButton: function(evt) {
+    handleFocus: function(evt) {
       // component event is not bubblie by default
-      this.triggerEvent("focusfloor", this.data.index, 
+      this.triggerEvent("focus", this.data.index, 
                          {bubbles: true});
       this.setData({expand: true});
     },
 
     handleAddRoom: function(evt) {
       this.setData({tappedButton: evt.type});
-      this.triggerEvent("showinput", this.data.index,
-                        {bubbles: true});
     },
 
     handleRemoveRoom: function(evt) {
       this.setData({tappedButton: evt.type});
-      this.triggerEvent("showinput", this.data.index,
-                        {bubbles: true})
     },
 
     handleEditRoom: function(evt) {
       this.setData({tappedButton: evt.type});
-      this.triggerEvent("showinput", this.data.index,
-                        {bubbles: true})
     },
 
     handleRoomTap: function(evt) {
-      if (this.properties.tappedButton === "remove_room") {
-        console.log("remove room");
-      } else if (this.properties.tappedButton === "edit_room") {
-        console.log("edit_room");
+      if (this.data.index === this.data.focusIndex) {
+        console.log("floor focus");
       } else {
         console.log("tap room")
         const data = evt.currentTarget.dataset;

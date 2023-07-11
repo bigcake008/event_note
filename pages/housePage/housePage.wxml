@@ -1,37 +1,38 @@
 <!--pages/tem.wxml-->
-<wxs module="test" src="../wxs/index.wxs"></wxs>
-<view class="root">
-  <house index="{{index}}"
-         location="{{location}}"
-  >
-  </house>
-  <view class="btn_group"
-        bind:add_floor="handleAddFloor"
-        bind:remove_floor="handleRemoveFloor"
-  >
-    <sbtn btn-type="add" 
-          btn-name="add_floor"
-    ></sbtn>
-    <sbtn btn-type="remove"
-          btn-name="remove_floor"
-    ></sbtn>
-  </view>
-  <view bind:showinput="handleShowInput"
-        bind:hideinput="handleHideInput"
-        bind:roomtap="handleRoomTap"
-        bind:focusfloor="handleFocusFloor"
-  >
+<!-- <wxs module="test" src="../wxs/index.wxs"></wxs> -->
+<scroll-view class="scroll_view"
+             type="custom"
+             scroll-y
+>
+  <view class="root">
+    <house index="{{index}}"
+           location="{{location}}"
+           bind:tap="handleHouseTap"
+    >
+    </house>
+    <view class="btn_group"
+          bind:add_floor="handleAddFloor"
+          bind:remove_floor="handleRemoveFloor"
+    >
+      <sbtn btn-type="add" 
+            btn-name="add_floor"
+      ></sbtn>
+      <sbtn btn-type="remove"
+            btn-name="remove_floor"
+      ></sbtn>
+    </view>
     <floor wx:for="{{floors}}"
            wx:key="index"
+           class="{{focusIndex == item.index ? 'focus' : ''}}"
            index="{{item.index}}"
            rooms="{{item.rooms}}"
            focusIndex="{{focusIndex}}"
            tappedButton="{{tappedButton}}"
+           bind:roomtap="handleRoomTap"
+           bind:focus="handleFocus"
     ></floor>
+    <view class="glass_view {{focusIndex == 0 ? 'hide' : ''}}" 
+          bind:tap="handleUnfocus"
+    ></view>
   </view>
-  <view class="input_view" 
-        bind:tap="handleHideInput"
-        prop="{{glassHeight}}"
-        change:prop="{{test.setGlassHeight}}" 
-  ></view>
-</view>
+</scroll-view>

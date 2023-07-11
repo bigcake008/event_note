@@ -14,7 +14,6 @@ console.log(`global this: ${this}`);
 Page({
   data: {
     house: house,
-    glassHeight: 0,
     btn: btn,
     tappedButton: "",
     focus: "",
@@ -32,20 +31,6 @@ Page({
       })
     }
   },
-
-  // handleShowInput: function(evt) {
-  //   console.log(evt);
-  //   const detail = evt.detail;
-  //   let focus = "";
-  //   if (detail.bt === "remove" || detail.bt === "edit") {
-  //     focus = "focus";
-  //   }
-  //   this.setData({
-  //     tappedButton: detail.bn,
-  //     displayInput: '',
-  //     focus
-  //   })
-  // },
 
   handleAddHouse: function(evt) {
     console.log("add house");
@@ -75,22 +60,20 @@ Page({
     })
   },
 
-  handleShowInput: function(evt) {
+  handleFocus: function(evt) {
     let focus = "";
     const tb = this.data.tappedButton;
     if (tb === "edit_house" || tb === "remove_house") {
       focus = "focus";
     }
     this.setData({
-      glassHeight: app.windowHeight,
       focus: focus
     })
   },
 
-  handleHideInput: function(evt) {
+  handleUnfocus: function(evt) {
     this.setData({
       tappedButton: "",
-      glassHeight: 0,
       focus: ""
     })
   },

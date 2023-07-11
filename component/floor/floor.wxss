@@ -1,63 +1,89 @@
 /* component/floor.wxss */
 .floor {
   margin: 0 5%;
-  margin-top: 2%;
+  margin-top: 20rpx;
   width: 90%;
-  height: 85rpx;
+  height: 100rpx;
   border: black solid 5rpx;
   border-radius: 10rpx;
-  display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  display: flex;
   overflow: hidden;
 }
 
-.expand_floor {
-  height: 100%;
-}
-
 .floor_circle {
-  width: 90rpx;
-  height: 80rpx;
+  width: 85rpx;
+  height: 90rpx;
   border-radius: 15rpx;
 }
 
 .floor_image {
   width: 80rpx;
   height: 80rpx;
-  vertical-align: text-bottom;
-}
-
-.counter_hover {
-  background-color: #fff0dd;
 }
 
 .floor_number {
   position: relative;
-  top: -68rpx;
-  left: 10rpx;
+  top: -65rpx;
+  left: 8rpx;
   width: 60rpx;
   height: 60rpx;
-  display: inline-block;
-  overflow: overlay;
   font-size: 40rpx;
   text-align: center;
   color: #f9ba6c;
+  overflow: hidden;
+}
+
+.floor_hover {
+  background-color: #fff0dd;
+}
+
+.expand_floor {
+  height: 100%;
 }
 
 .rooms_group {
+  flex: 5;
   display: flex;
   flex-flow: row wrap;
 }
 
-/* .btn_group {
-  display: flex;
-} */
+.room_box {
+  border: black solid 2rpx;
+  border-radius: 10rpx;
+  margin: 12rpx 10rpx;
+  width: 100rpx;
+  height: 65rpx;
+  text-align: center;
+  font-size: 40rpx;
+}
 
-.display {
+.btn_group {
+  height: 85rpx;
   display: flex;
 }
 
-.hidden {
+._hover {
+  background-color: #ecebeb;
+  background-clip: content-box;
+}
+
+.remove_room {
+  color: #ed414c;
+}
+
+.remove_room_hover {
+  background-color: #ffd7d5;
+}
+
+.edit_room {
+  color: #54aeff;
+}
+
+.edit_room_hover {
+  background-color: #ddf4ff;
+}
+
+.hide {
   display: none;
 }
 

@@ -1,8 +1,4 @@
 /* logo section */
-.root {
-  margin-top: 100rpx;
-}
-
 .logo {
   margin: 20rpx;
   display: flex;
@@ -29,19 +25,7 @@
   display: flex;
 }
 
-.input_view {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  backdrop-filter: blur(3px);
-}
-
 .input_group {
   position: relative;
   margin-left: 60rpx;
-}
-
-.focus {
-  position: relative;
-  z-index: 1;
 }
