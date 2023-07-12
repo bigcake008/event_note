@@ -3,9 +3,3 @@
   display: flex;
   justify-content: center;
 }
-
-.focus_floor {
-  position: absolute;
-  top: 30%;
-  z-index: 1;
-}

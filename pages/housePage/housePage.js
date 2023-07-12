@@ -16,7 +16,7 @@ const floors = [
                 },
                 {
                   index: 6,
-                  rooms: ["601", "602", "606", "608"]
+                  rooms: ["601", "602", "606", "608", "609", "610"]
                 },
                  {
                   index: 5,
@@ -87,8 +87,9 @@ Page({
   },
 
   handleFocus: function(evt) {
-    let focusIndex = evt.detail;
-    this.setData({focusIndex: evt.detail});
+    this.setData({
+      focusIndex: evt.detail.index,
+    });
   },
 
   handleUnfocus: function() {

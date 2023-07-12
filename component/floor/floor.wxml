@@ -1,5 +1,23 @@
 <!--component/floor.wxml-->
-<view class="floor {{focusIndex == index ? 'focus' : ''}} {{expand ? 'expand_floor' : ''}}">
+<view class="btn_group"
+      style="top: {{focusIndex == index ? buttonsMove : 0}}rpx;"
+      bind:add_room="handleAddRoom"
+      bind:remove_room="handleRemoveRoom"
+      bind:edit_room="handleEditRoom"
+>
+  <sbtn btn-name="edit_room"
+        tapped-btn="{{tappedButton}}"
+  ></sbtn>
+  <sbtn btn-name="remove_room"
+        tapped-btn="{{tappedButton}}"
+  ></sbtn>
+  <sbtn btn-name="add_room"
+        tapped-btn="{{tappedButton}}"
+  ></sbtn>
+</view>
+<view class="floor {{expand ? 'expand_floor' : ''}}"
+      style="transform: translateY({{focusIndex == index ? translateY : 0}}rpx);height: {{expand ? expandHeight : 100}}rpx;"
+>
   <view wx:if="{{index < 10}}"
         class="floor_circle"
         hover-class="floor_hover"
@@ -30,23 +48,6 @@
           data-index="{{item}}"
           bind:tap="handleRoomTap"
     >{{item}}</view>
-    <view class="'btn_group' {{focusIndex == index ? '' : 'hide'}}"
-          bind:add_room="handleAddRoom"
-          bind:remove_room="handleRemoveRoom"
-          bind:edit_room="handleEditRoom"
-    >
-      <sbtn class="{{rooms.length > 0 ? '' : 'hide'}}"
-            btn-name="edit_room"
-            tapped-btn="{{tappedButton}}"
-      ></sbtn>
-      <sbtn class="{{rooms.length > 0 ? '' : 'hide'}}"
-            btn-name="remove_room"
-            tapped-btn="{{tappedButton}}"
-      ></sbtn>
-      <sbtn btn-name="add_room"
-            tapped-btn="{{tappedButton}}"
-      ></sbtn>
-    </view>
     <view wx:if="{{focusIndex == index && tappedButton == 'add_room'}}">
       <cinput tapped-btn="add_room"></cinput>
     </view>

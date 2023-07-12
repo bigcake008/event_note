@@ -3,11 +3,14 @@
   margin: 0 5%;
   margin-top: 20rpx;
   width: 90%;
-  height: 100rpx;
   border: black solid 5rpx;
   border-radius: 10rpx;
+  background-color: rgb(250, 248, 240);
   display: flex;
   overflow: hidden;
+  transition: 
+    transform 0.5s,
+    height 0.5s;
 }
 
 .floor_circle {
@@ -37,10 +40,6 @@
   background-color: #fff0dd;
 }
 
-.expand_floor {
-  height: 100%;
-}
-
 .rooms_group {
   flex: 5;
   display: flex;
@@ -58,8 +57,18 @@
 }
 
 .btn_group {
+  position: absolute;
+  top: 0;
+  margin: 0 25%;
+  width: 50%;
   height: 85rpx;
+  border-radius: 10rpx;
+  background-color: rgb(250, 248, 240);
   display: flex;
+  justify-content: center;
+  transition: 
+    transform 0.5s,
+    top 0.5s;
 }
 
 ._hover {
@@ -84,10 +93,5 @@
 }
 
 .hide {
-  display: none;
-}
-
-.focus {
-  position: relative;
-  z-index: 1;
+  visibility: hidden;
 }

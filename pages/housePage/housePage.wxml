@@ -1,8 +1,9 @@
 <!--pages/tem.wxml-->
 <!-- <wxs module="test" src="../wxs/index.wxs"></wxs> -->
+<!-- scroll-y seems always true in skyline by now(20230712)-->
 <scroll-view class="scroll_view"
              type="custom"
-             scroll-y
+             scroll-y="{{focusIndex == 0}}"
 >
   <view class="root">
     <house index="{{index}}"

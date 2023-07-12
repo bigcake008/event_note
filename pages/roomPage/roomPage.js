@@ -11,6 +11,7 @@ Page({
   },
 
   handleRoomTap: function() {
+    console.log("go back");
     wx.navigateBack();
   }
 })
