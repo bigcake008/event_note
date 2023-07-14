@@ -1,6 +1,6 @@
 <!--component/floor.wxml-->
-<view class="btn_group"
-      style="top: {{focus ? buttonsMove : 0}}rpx;"
+<view wx:if="{{focus}}"
+      class="btn_group"
       bind:add_room="handleAddRoom"
       bind:remove_room="handleRemoveRoom"
       bind:edit_room="handleEditRoom"

@@ -66,8 +66,7 @@
   display: flex;
   justify-content: center;
   transition: 
-    transform 0.5s,
-    top 0.5s;
+    transform 0.5s;
 }
 
 ._hover {
