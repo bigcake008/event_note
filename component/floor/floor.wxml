@@ -1,6 +1,6 @@
 <!--component/floor.wxml-->
 <view class="btn_group"
-      style="top: {{focusIndex == index ? buttonsMove : 0}}rpx;"
+      style="top: {{focus ? buttonsMove : 0}}rpx;"
       bind:add_room="handleAddRoom"
       bind:remove_room="handleRemoveRoom"
       bind:edit_room="handleEditRoom"
@@ -16,7 +16,7 @@
   ></sbtn>
 </view>
 <view class="floor {{expand ? 'expand_floor' : ''}}"
-      style="transform: translateY({{focusIndex == index ? translateY : 0}}rpx);height: {{expand ? expandHeight : 100}}rpx;"
+      style="transform: translateY({{focus ? translateY : 0}}rpx);height: {{expand ? expandHeight : 100}}rpx;"
 >
   <view wx:if="{{index < 10}}"
         class="floor_circle"
@@ -48,7 +48,7 @@
           data-index="{{item}}"
           bind:tap="handleRoomTap"
     >{{item}}</view>
-    <view wx:if="{{focusIndex == index && tappedButton == 'add_room'}}">
+    <view wx:if="{{focus && tappedButton == 'add_room'}}">
       <cinput tapped-btn="add_room"></cinput>
     </view>
   </view>

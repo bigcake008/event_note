@@ -2,7 +2,6 @@
 .floor {
   margin: 0 5%;
   margin-top: 20rpx;
-  width: 90%;
   border: black solid 5rpx;
   border-radius: 10rpx;
   background-color: rgb(250, 248, 240);

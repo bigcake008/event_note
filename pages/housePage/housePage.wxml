@@ -27,7 +27,7 @@
            class="{{focusIndex == item.index ? 'focus' : ''}}"
            index="{{item.index}}"
            rooms="{{item.rooms}}"
-           focusIndex="{{focusIndex}}"
+           focus="{{focus}}"
            tappedButton="{{tappedButton}}"
            bind:roomtap="handleRoomTap"
            bind:focus="handleFocus"

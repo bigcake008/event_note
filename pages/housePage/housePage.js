@@ -49,6 +49,7 @@ Page({
     floors: floors,
     tappedButton: "",
     focusIndex: 0,
+    focus: false,
   },
 
   onLoad(options) {
@@ -95,7 +96,8 @@ Page({
   handleUnfocus: function() {
     this.setData({
       focusIndex: 0,
-      tappedButton: ""
+      tappedButton: "",
+      focus: false,
     });
   }
 

@@ -2,7 +2,7 @@
 /* house_list_section */
 .house {
   height: 100rpx;
-  margin: 0 0 20rpx 40rpx;
+  margin: 0 40rpx 20rpx 40rpx;
   background-clip: content-box;
   display: flex;
 }

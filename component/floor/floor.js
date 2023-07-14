@@ -15,11 +15,11 @@ Component({
     index: {
       type: Number,
     },
-    focusIndex: {
-      type: Number,
-    },
     tappedButton: {
       type: String,
+    },
+    focus: {
+      type: Boolean,
     },
   },
 
@@ -31,10 +31,8 @@ Component({
   },
 
   lifetimes: {
-    created: function() {
-      // console.log("created:", this);
-    },
     attached: function() {
+      // calculate expand height from rooms.length, at least 100rpx
       const expandHeight = Math.floor((this.properties.rooms.length + 3) / 4) * 100;
       this.setData({expandHeight: Math.max(100, expandHeight)});
     }
@@ -43,7 +41,7 @@ Component({
   methods: {
     handleExpandFloor: function() {
       // disable the expand button when the floor focused
-      if (this.data.index === this.properties.focusIndex) {
+      if (this.data.focus) {
         return;
       }
       this.setData({
@@ -52,7 +50,7 @@ Component({
     },
 
     handleFocus: function(evt) {
-      if (this.properties.focusIndex === this.data.index) {
+      if (this.data.focus) {
         return;
       }
       // when the focus floor appear on the lower half of screen
@@ -61,7 +59,7 @@ Component({
       let translateY = 0, buttonsMove = this.data.expandHeight;
       if (detailY > halfWindowHeight) {
         // convert px to rpx
-        translateY = px2rpx(halfWindowHeight-detailY, windowWidth);
+        translateY = px2rpx(halfWindowHeight-detailY, windowWidth) - 100;
         buttonsMove += translateY;
       }
       // component event is not bubblie by default
@@ -72,6 +70,7 @@ Component({
         );
       this.setData({
         expand: true, // always expand the floor when focused
+        focus: true,
         translateY: translateY,
         buttonsMove: buttonsMove
       });
@@ -90,7 +89,7 @@ Component({
     },
 
     handleRoomTap: function(evt) {
-      if (this.data.index === this.data.focusIndex) {
+      if (this.data.focus) {
         console.log("floor focus");
       } else {
         console.log("tap room")
@@ -98,5 +97,16 @@ Component({
         this.triggerEvent("roomtap", data, {bubbles: true});
       }
     }
+  },
+
+  observers: {
+    // previously focus floor driven by focusIndex(parent's property), which causing extra calculation, this can be avoided by using this.setData() to change focus(also paret's property) in each child
+    "focusIndex": function() {
+      console.log("focusIndex changed");
+    },
+    "focus": function() {
+      console.log("focus changed");
+    }
   }
+
 })

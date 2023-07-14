@@ -2,7 +2,6 @@
 <view class="house" 
       hover-class="hover {{tappedButton}}_hover" 
       hover-stay-time="120" 
-      bind:longpress="longPress"
 >
   <image class="house_image" 
          src="../../public/symbols/cottage.svg"
