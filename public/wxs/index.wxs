@@ -1,0 +1,28 @@
+
+var setGlassHeight = function(newVal, oldVal, ownerInstance, instance) {
+  // getState return an object which can store temporary value
+  // if (oldVal === undefined) {
+  //   instance.getState().value = "hello world";
+  // }
+  if (newVal !== 0) {
+    // get realtime height of the whole document
+    // if realtime height larger than the window height, then use realtime height as glass height
+    var documentHeight = parseInt(ownerInstance.getComputedStyle(["height"]).height);
+    var height = Math.max(newVal, documentHeight) + "px";
+    instance.setStyle({height: height, dipslay: "block"});
+  } else {
+    instance.setStyle({display: "none"});
+  }
+}
+
+module.exports = {
+  setGlassHeight: setGlassHeight
+}
+
+
+
+
+
+
+
+
