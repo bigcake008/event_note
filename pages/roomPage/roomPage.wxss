@@ -1,7 +1,60 @@
 /* pages/roomPage/roomPage.wxss */
+.room_box {
+  margin-top: 100rpx;
+  margin-bottom: 30rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
 .room {
-  margin-top: 200rpx;
-  height: 50vh;
+  padding-top: 20rpx;
+  font-size: 60rpx;
+  border-radius: 15rpx;
+}
+
+.unit_box {
+  margin: 0 20rpx;
+  height: 100rpx;
+  border-style: solid none none none;
   font-size: 50rpx;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+.total {
+  margin-bottom: 100rpx;
+}
+
+.unit_head {
+  flex: 1;
+}
+
+.unit_content {
+  width: 100%;
+  padding: 20rpx 20rpx;
+  font-size: 46rpx;
+}
+
+.item_list {
+  height: 80rpx;
+  display: flex;
+}
+
+.item_key {
+  flex: 1;
+}
+
+.item_value {
+  flex: 1;
+}
+
+.expand {
+  height: auto;
+}
+
+.hover {
+  background-color: #ecebeb;
 }

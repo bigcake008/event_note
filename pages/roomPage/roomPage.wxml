@@ -1,3 +1,24 @@
-<view class="room"
-      bind:tap="handleRoomTap"
->{{houseIndex + '-' + roomIndex}}</view>
+<scroll-view class="scroll_view"
+             type="custom"
+             scroll-y="{{focusIndex == 0}}"
+>
+  <view class="room_box">
+    <view class="room"
+          hover-class="hover"
+          bind:tap="handleRoomTap"
+    >{{houseIndex + '-' + roomIndex}}</view>
+  </view>
+  <tenant-message value="{{tenantMessage}}"
+  ></tenant-message>
+  <bill value="{{waterBill}}"
+        prefix="water"
+  ></bill>
+  <bill value="{{electricityBill}}"
+        prefix="electricity"
+  ></bill>
+  <sundry value="{{sundry}}"
+  ></sundry>
+  <view class="unit_box total">
+    <text class="unit_head">total</text>
+  </view>
+</scroll-view>

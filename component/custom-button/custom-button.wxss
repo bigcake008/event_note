@@ -29,6 +29,10 @@
   background-color: #ffd7d5;
 }
 
+.expand_hover {
+  background-color: #ecebeb;
+}
+
 .add {
   background-color: #dcfae3;
 }

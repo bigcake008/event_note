@@ -3,13 +3,11 @@
 .house {
   height: 100rpx;
   margin: 0 40rpx 20rpx 40rpx;
-  background-clip: content-box;
   display: flex;
 }
 .house_image {
   width: 100rpx;
   height: 100rpx;
-  vertical-align: text-bottom;
 }
 .house_text {
   position: relative;
@@ -32,7 +30,6 @@
 }
 .hover {
   background-color: #ecebeb;
-  background-clip: content-box;
   border-radius: 15rpx;
 }
 

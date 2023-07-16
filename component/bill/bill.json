@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "custom-button": "../custom-button/custom-button"
+  },
+  "styleIsolation": "apply-shared"
+}

@@ -1,0 +1,32 @@
+<!--component/bill/bill.wxml-->
+<view class="unit_box"
+      style="height: {{expand ? 460 : 100}}rpx"
+>
+  <text class="unit_head">{{prefix + '_bill'}}</text>
+  <custom-button btn-name="{{expand ? 'expand_less' : 'expand_more'}}"
+                 bind:expand_more="handleExpandUnit"
+                 bind:expand_less="handleExpandUnit"
+  ></custom-button>
+  <view class="unit_content">
+    <view class="item_list">
+      <text class="item_value">{{preDate}}</text>
+      <text class="item_value">{{preUsage}}</text>
+    </view>
+    <view class="item_list">
+      <text class="item_value">{{curDate}}</text>
+      <text class="item_value">{{curUsage}}</text>
+    </view>
+    <view class="item_list">
+      <label for="4"
+             class="item_key"
+      >单价：</label>
+      <text class="item_value">{{rate}}</text>
+    </view>
+    <view class="item_list">
+      <label for="5"
+             class="item_key"
+      >费用：</label>
+      <text class="item_value">{{cost}}</text>
+    </view>
+  </view>
+</view>

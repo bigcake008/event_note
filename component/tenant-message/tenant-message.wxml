@@ -1,0 +1,42 @@
+<!--component/tenant-message/tenant-message.wxml-->
+<view class="unit_box"
+      style="height: {{expand ? 540 : 100}}rpx"
+>
+  <text class="unit_head">tenant_message</text>
+  <custom-button btn-name="{{expand ? 'expand_less' : 'expand_more'}}"
+                 bind:expand_more="handleExpandUnit"
+                 bind:expand_less="handleExpandUnit"
+  ></custom-button>
+  <view class="unit_content">
+    <view class="item_list">
+      <label for="0"
+             class="item_key"
+      >姓名：</label>
+      <text class="item_value">{{name}}</text>
+    </view>
+    <view class="item_list">
+      <label for="1"
+             class="item_key"
+      >电话：</label>
+      <text class="item_value">{{phone}}</text>
+    </view>
+    <view class="item_list">
+      <label for="2"
+             class="item_key"
+      >入住时间：</label>
+      <text class="item_value">{{inDate}}</text>
+    </view>
+    <view class="item_list">
+      <label for="3"
+             class="item_key"
+      >押金：</label>
+      <text class="item_value">{{deposit}}</text>
+    </view>
+    <view class="item_list">
+      <label for="4"
+             class="item_key"
+      >租金：</label>
+      <text class="item_value">{{rental}}</text>
+  </view>
+  </view>
+</view>

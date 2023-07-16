@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-button": "../../component/custom-button/custom-button",
+    "tenant-message": "../../component/tenant-message/tenant-message",
+    "bill": "../../component/bill/bill",
+    "sundry": "../../component/sundry/sundry"
+  }
 }
