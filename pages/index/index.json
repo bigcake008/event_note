@@ -1,8 +1,8 @@
 {
   "usingComponents": {
     "house": "/component/house/house",
-    "sbtn": "/component/sbtn/sbtn",
-    "cinput": "/component/cinput/cinput"
+    "custom-button": "/component/custom-button/custom-button",
+    "custom-input": "/component/custom-input/custom-input"
   },
   "navigationBarTitleText": "event_note",
   "pageOrientation": "auto"

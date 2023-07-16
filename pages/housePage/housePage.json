@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "sbtn": "/component/sbtn/sbtn",
+    "custom-button": "/component/custom-button/custom-button",
     "house": "/component/house/house",
     "floor": "/component/floor/floor"
   },

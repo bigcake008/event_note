@@ -1,8 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "sbtn": "/component/sbtn/sbtn",
+    "custom-button": "/component/custom-button/custom-button",
     "room": "/component/room/room",
-    "cinput": "/component/cinput/cinput"
+    "custom-input": "/component/custom-input/custom-input"
   }
 }

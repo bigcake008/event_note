@@ -30,18 +30,18 @@
           bind:edit_house="handleEditHouse"
           bind:remove_house="handleRemoveHouse"
     >
-      <sbtn 
+      <custom-button 
             wx:for="{{btn}}" 
             wx:key="index" 
             btn-name="{{item}}" 
             tapped-btn="{{tappedButton}}" 
             bind:tap="handleFocus"
-      ></sbtn>
+      ></custom-button>
     </view>
    <view wx:if="{{tappedButton != ''}}"
          class="input_group focus" 
     >
-      <cinput tapped-btn="{{tappedButton}}" />
+      <custom-input tapped-btn="{{tappedButton}}" />
     </view>
     <view class="glass_view {{tappedButton == '' ? 'hide' : ''}}"
           bind:tap="handleUnfocus" 

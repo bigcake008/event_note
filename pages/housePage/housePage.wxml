@@ -15,12 +15,12 @@
           bind:add_floor="handleAddFloor"
           bind:remove_floor="handleRemoveFloor"
     >
-      <sbtn btn-type="add" 
+      <custom-button btn-type="add" 
             btn-name="add_floor"
-      ></sbtn>
-      <sbtn btn-type="remove"
+      ></custom-button>
+      <custom-button btn-type="remove"
             btn-name="remove_floor"
-      ></sbtn>
+      ></custom-button>
     </view>
     <floor wx:for="{{floors}}"
            wx:key="index"
