@@ -8,8 +8,8 @@
           bind:tap="handleRoomTap"
     >{{houseIndex + '-' + roomIndex}}</view>
   </view>
-  <tenant-message value="{{tenantMessage}}"
-  ></tenant-message>
+  <tenant-information value="{{tenantMessage}}"
+  ></tenant-information>
   <bill value="{{waterBill}}"
         prefix="water"
   ></bill>
@@ -20,5 +20,6 @@
   ></sundry>
   <view class="unit_box total">
     <text class="unit_head">total</text>
+    
   </view>
 </scroll-view>
