@@ -18,32 +18,32 @@
             wx:key="index" 
             index="{{item.index}}" 
             location="{{item.location}}"
-            tappedButton="{{tappedButton}}" 
+            status="{{status}}" 
             data-index="{{item.index}}"
             data-location="{{item.location}}"
             bind:tap="handleHouseTap"
       ></house>
     </view>
     <view class="btn_group"
-          bind:add_house="handleAddHouse"
-          bind:search_info="handleSearchInfo"
-          bind:edit_house="handleEditHouse"
-          bind:remove_house="handleRemoveHouse"
+          bind:addhouse="handleAddHouse"
+          bind:searchinfo="handleSearchInfo"
+          bind:edithouse="handleEditHouse"
+          bind:removehouse="handleRemoveHouse"
     >
       <custom-button 
-            wx:for="{{btn}}" 
+            wx:for="{{button}}" 
             wx:key="index" 
-            btn-name="{{item}}" 
-            tapped-btn="{{tappedButton}}" 
+            button-name="{{item}}" 
+            status="{{status}}" 
             bind:tap="handleFocus"
       ></custom-button>
     </view>
-   <view wx:if="{{tappedButton != ''}}"
+   <view wx:if="{{status != ''}}"
          class="input_group focus" 
     >
-      <custom-input tapped-btn="{{tappedButton}}" />
+      <custom-input status="{{status}}" />
     </view>
-    <view class="glass_view {{tappedButton == '' ? 'hide' : ''}}"
+    <view class="glass_view {{status == '' ? 'hide' : ''}}"
           bind:tap="handleUnfocus" 
     ></view>
   </view>

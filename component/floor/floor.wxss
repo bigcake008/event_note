@@ -74,19 +74,19 @@
   background-clip: content-box;
 }
 
-.remove_room {
+.removeroom {
   color: #ed414c;
 }
 
-.remove_room_hover {
+.removeroom_hover {
   background-color: #ffd7d5;
 }
 
-.edit_room {
+.editroom {
   color: #54aeff;
 }
 
-.edit_room_hover {
+.editroom_hover {
   background-color: #ddf4ff;
 }
 

@@ -17,7 +17,7 @@ Component({
     index: {
       type: Number,
     },
-    tappedButton: {
+    status: {
       type: String,
     },
     focus: {
@@ -103,15 +103,15 @@ Component({
     },
 
     handleAddRoom: function(evt) {
-      this.setData({tappedButton: evt.type});
+      this.setData({status: evt.type});
     },
 
     handleRemoveRoom: function(evt) {
-      this.setData({tappedButton: evt.type});
+      this.setData({status: evt.type});
     },
 
     handleEditRoom: function(evt) {
-      this.setData({tappedButton: evt.type});
+      this.setData({status: evt.type});
     },
 
     handleRoomTap: function(evt) {

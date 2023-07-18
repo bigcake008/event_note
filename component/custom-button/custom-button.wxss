@@ -13,38 +13,38 @@
   height: 80rpx;
 }
 
-.add_hover {
+.green_hover {
   background-color: #dcfae3;
 }
 
-.search_hover {
+.yellow_hover {
   background-color: #fff0dd;
 }
 
-.edit_hover {
+.blue_hover {
   background-color: #ddf4ff;
 }
 
-.remove_hover {
+.red_hover {
   background-color: #ffd7d5;
 }
 
-.expand_hover {
+.grey_hover {
   background-color: #ecebeb;
 }
 
-.add {
+.green {
   background-color: #dcfae3;
 }
 
-.search {
+.yellow {
   background-color: #fff0dd;
 }
 
-.edit {
+.blue {
   background-color: #ddf4ff;
 } 
 
-.remove {
+.red {
   background-color: #ffd7d5;
 }

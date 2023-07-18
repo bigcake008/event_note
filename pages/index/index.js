@@ -6,7 +6,7 @@ let house =
     {'index': 99999, 'location': 'hello world, good night, good bye!!!'},
     {'index': 100, 'location': 'proxy confuse people'},
     ];
-let btn = ["add_house", "search_info", "edit_house", "remove_house"];
+let button = ["green_addhouse", "yellow_searchinfo", "blue_edithouse", "red_removehouse"];
 // getApp return global context
 var app = getApp();
 console.log(`global this: ${this}`);
@@ -14,15 +14,15 @@ console.log(`global this: ${this}`);
 Page({
   data: {
     house: house,
-    btn: btn,
-    tappedButton: "",
+    button: button,
+    status: "",
     focus: "",
   },
 
   handleHouseTap: function(evt) {
-    if (this.data.tappedButton === "remove_house") {
+    if (this.data.status === "removehouse") {
       console.log("house remove");
-    } else if (this.data.tappedButton === "edit_house") {
+    } else if (this.data.status === "edithouse") {
       console.log("house edit");
     } else {
       const data = evt.target.dataset;
@@ -35,35 +35,35 @@ Page({
   handleAddHouse: function(evt) {
     console.log("add house");
     this.setData({
-      tappedButton: evt.type,
+      status: evt.type,
     })
   },
 
   handleSearchInfo: function(evt) {
     console.log("search info");
     this.setData({
-      tappedButton: evt.type,
+      status: evt.type,
     })
   },
 
   handleEditHouse: function(evt) {
     console.log("edit house");
     this.setData({
-      tappedButton: evt.type,
+      status: evt.type,
     })
   },
 
   handleRemoveHouse: function(evt) {
     console.log("remove house");
     this.setData({
-      tappedButton: evt.type,
+      status: evt.type,
     })
   },
 
   handleFocus: function(evt) {
     let focus = "";
-    const tb = this.data.tappedButton;
-    if (tb === "edit_house" || tb === "remove_house") {
+    const status = this.data.status;
+    if (status === "edithouse" || status === "removehouse") {
       focus = "focus";
     }
     this.setData({
@@ -73,7 +73,7 @@ Page({
 
   handleUnfocus: function(evt) {
     this.setData({
-      tappedButton: "",
+      status: "",
       focus: ""
     })
   },

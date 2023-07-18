@@ -7,7 +7,7 @@ Component({
     location: {
       type: String,
     },
-    tappedButton: {
+    status: {
       type: String,
     }
   },

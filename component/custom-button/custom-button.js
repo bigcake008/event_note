@@ -1,39 +1,41 @@
 // component/sbtn/sbtn.js
 Component({
   properties: {
-    btnName: {
+    buttonName: {
       type: String,
     },
-    tappedBtn: {
+    status: {
       type: String,
     },
   },
 
   data: {
     highlight: "",
-    btnType: ""
+    backgroundColor: "",
+    event: "",
   },
 
   lifetimes: {
     attached: function() {
-      const btnType = this.properties.btnName.split("_")[0];
-      this.setData({btnType});
+      const [backgroundColor, event] = this.properties.buttonName.split("_")
+      this.setData({backgroundColor: backgroundColor, event: event});
     }
   },
 
   methods: {
     handleTap: function() {
-      this.triggerEvent(this.properties.btnName, 
-                        {},
-                        {bubbles: true});
+      this.triggerEvent(
+        this.data.event, 
+        {},
+        {bubbles: true});
     },
   },
 
   observers: {
     // highlight the tapped button
-    'tappedBtn': function(tb) {
+    'status': function(s) {
       this.setData({
-        highlight: tb == this.properties.btnName ? this.data.btnType : ""
+        highlight: s == this.data.event ? this.data.backgroundColor : ""
       })
     }
   }

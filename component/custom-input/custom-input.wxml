@@ -1,5 +1,5 @@
 <!--component/cinput/cinput.wxml-->
-<view wx:if="{{tappedBtn == 'add_house'}}" 
+<view wx:if="{{status == 'addhouse'}}" 
       class="input_block"
 >
   <input class="input_num" 
@@ -13,7 +13,7 @@
          cursor-spacing="20"
   />
 </view>
-<view wx:elif="{{tappedBtn == 'search_info'}}" 
+<view wx:elif="{{status == 'searchinfo'}}" 
       class="input_block"
 >
   <input class="input_name" 
@@ -22,7 +22,7 @@
          cursor-spacing="20" 
   />
 </view>
-<view wx:elif="{{tappedBtn == 'add_room'}}"
+<view wx:elif="{{status == 'addroom'}}"
       class="input_room"
 >
   <input placeholder="房间号"

@@ -1,12 +1,12 @@
 <!--component/sbtn/sbtn.wxml-->
 <!-- class and hover-class seems have collision, they could not have same class name-->
-<!-- for example, if i set {{hightlight}} = {{btnType}}_hover, highlight has not effect -->
+<!-- for example, if i set {{hightlight}} == {{btnType}}_hover, highlight has not effect -->
 <view class="btn_box {{highlight}}" 
-      hover-class="hover {{btnType}}_hover" 
+      hover-class="hover {{backgroundColor}}_hover" 
       hover-stay-time="120" 
       bind:tap="handleTap"
 >
   <image class="btn_image" 
-         src="../../public/symbols/{{btnName}}.svg"
+         src="../../public/symbols/{{buttonName}}.svg"
   ></image>
 </view>

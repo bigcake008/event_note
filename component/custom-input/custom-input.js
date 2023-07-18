@@ -1,7 +1,7 @@
 // component/cinput/cinput.js
 Component({
   properties: {
-    tappedBtn: {
+    status: {
       type: String
     }
   },

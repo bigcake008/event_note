@@ -12,14 +12,12 @@
     >
     </house>
     <view class="btn_group"
-          bind:add_floor="handleAddFloor"
-          bind:remove_floor="handleRemoveFloor"
+          bind:addfloor="handleAddFloor"
+          bind:removefloor="handleRemoveFloor"
     >
-      <custom-button btn-type="add" 
-            btn-name="add_floor"
+      <custom-button button-name="green_addfloor"
       ></custom-button>
-      <custom-button btn-type="remove"
-            btn-name="remove_floor"
+      <custom-button button-name="red_removefloor"
       ></custom-button>
     </view>
     <floor wx:for="{{floors}}"
@@ -28,7 +26,7 @@
            index="{{item.index}}"
            rooms="{{item.rooms}}"
            focus="{{focus}}"
-           tappedButton="{{tappedButton}}"
+           status="{{status}}"
            bind:roomtap="handleRoomTap"
            bind:focus="handleFocus"
     ></floor>

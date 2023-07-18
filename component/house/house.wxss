@@ -33,18 +33,18 @@
   border-radius: 15rpx;
 }
 
-.remove_house {
+.removehouse {
   color: #ed414c;
 }
 
-.remove_house_hover {
+.removehouse_hover {
   background-color: #ffd7d5;
 }
 
-.edit_house {
+.edithouse {
   color: #54aeff;
 }
 
-.edit_house_hover {
+.edithouse_hover {
   background-color: #ddf4ff;
 }
