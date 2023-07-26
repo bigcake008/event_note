@@ -38,7 +38,7 @@ Component({
       // which is a worklet function running in UI thread 
       const top = shared(0);
       // calculate expand height from rooms.length, at least 100rpx
-      const expandHeight = Math.floor((this.properties.rooms.length + 3) / 4) * 100;
+      const expandHeight = Math.floor((this.properties.rooms.length + 3) / 4) * 89; 
       this.setData({expandHeight: Math.max(100, expandHeight)});
       this.top = top;
     }

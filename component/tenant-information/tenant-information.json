@@ -3,5 +3,6 @@
   "usingComponents": {
     "custom-button": "../custom-button/custom-button"
   },
-  "styleIsolation": "apply-shared"
+  "styleIsolation": "apply-shared",
+  "pureDataPattern": "^_"
 }

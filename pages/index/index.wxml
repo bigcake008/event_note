@@ -43,7 +43,7 @@
     >
       <custom-input status="{{status}}" />
     </view>
-    <view class="glass_view {{status == '' ? 'hide' : ''}}"
+    <view class="screen_cover blur_view {{status == '' ? 'hide' : ''}}"
           bind:tap="handleUnfocus" 
     ></view>
   </view>

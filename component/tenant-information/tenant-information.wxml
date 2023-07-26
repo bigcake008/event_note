@@ -1,42 +1,58 @@
 <!--component/tenant-message/tenant-message.wxml-->
 <view class="unit_box"
-      style="height: {{expand ? 540 : 100}}rpx"
+      style="height: {{expand ? 580 : 100}}rpx"
 >
-  <text class="unit_head">tenant_message</text>
-  <custom-button btn-name="{{expand ? 'expand_less' : 'expand_more'}}"
-                 bind:expand_more="handleExpandUnit"
-                 bind:expand_less="handleExpandUnit"
-  ></custom-button>
-  <view class="unit_content">
-    <view class="item_list">
-      <label for="0"
-             class="item_key"
-      >姓名：</label>
-      <text class="item_value">{{name}}</text>
-    </view>
-    <view class="item_list">
-      <label for="1"
-             class="item_key"
-      >电话：</label>
-      <text class="item_value">{{phone}}</text>
-    </view>
-    <view class="item_list">
-      <label for="2"
-             class="item_key"
-      >入住时间：</label>
-      <text class="item_value">{{inDate}}</text>
-    </view>
-    <view class="item_list">
-      <label for="3"
-             class="item_key"
-      >押金：</label>
-      <text class="item_value">{{deposit}}</text>
-    </view>
-    <view class="item_list">
-      <label for="4"
-             class="item_key"
-      >租金：</label>
-      <text class="item_value">{{rental}}</text>
+  <view class="unit_head">
+    <text class="unit_title">tenant_information</text>
+    <custom-button button-name="{{expand ? 'grey_expandless' : 'grey_expandmore'}}"
+                   bind:expandmore="handleExpandUnit"
+                   bind:expandless="handleExpandUnit"
+    ></custom-button>
   </view>
+  <view class="unit_content">
+    <view wx:for="{{key}}"
+          class="item_list"
+    >
+      <view class="item_box">
+        <text class="item_text">{{item}}：</text>
+      </view>
+      <view id="{{'value-'+index}}"
+            class="item_box"
+            hover-class="{{status == 'editinfo' ? 'edit_hover' : ''}}"
+            hover-stay-time="100"
+            bind:tap="handleFocusInput"
+      >
+        <text class="item_text"
+              style="color: {{status == 'editinfo' ? '#54aeff' : ''}};"
+        >{{value[index]}}</text>
+        <input wx:if="{{focusIndex == 'value-'+index}}"
+               class="item_input"
+               focus="{{true}}"
+               placeholder="{{value[index]}}"
+               type="{{inputType[index]}}"
+               data-key="{{'0-'+index}}"
+               data-value="{{value[index]}}"
+               bind:blur="handleBlurInput"
+        />
+      </view>
+    </view>
+    <view class="item_list">
+      <view class="item_box">
+        <text class="item_text">入住日期：</text>
+     </view>
+      <view class="item_box"
+            hover-class="{{status == 'editinfo' ? 'edit_hover' : ''}}"
+            style="color: {{status == 'editinfo' ? '#54aeff' : ''}}; background-color: {{highlightPicker ? '#ddf4ff' : ''}};"
+            bind:tap="handlePickerTap"
+      >
+        <picker class="item_text"
+                mode="date" 
+                disabled="{{status != 'editinfo'}}"
+                data-key="0-4"
+                bind:change="handleChangeDate"
+                bind:cancel="handleCancel"
+        >{{value[4]}}</picker>
+      </view>
+    </view>
   </view>
 </view>

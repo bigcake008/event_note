@@ -1,2 +1,13 @@
 <!--component/editable-text/editable-text.wxml-->
-<text>component/editable-text/editable-text.wxml</text>
+<scroll-view class="scroll_box"
+             scroll-y
+             type="custom"
+             bind:tap="handleFocusTextArea"
+ >
+  <text style="display: {{showTextArea ? 'none': 'block'}};">{{remark}}</text>
+  <textarea class="textarea_box"
+            style="display: {{showTextArea ? 'block' : 'none'}};"
+            placeholder="{{remark}}"
+            bind:blur="handleBlur"
+  ></textarea>
+</scroll-view>

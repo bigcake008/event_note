@@ -1,1 +1,6 @@
 /* component/bill/bill.wxss */
+.text_span {
+  padding-top: 25rpx;
+  padding-left: 10rpx;
+  font-size: 30rpx;
+}

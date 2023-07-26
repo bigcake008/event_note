@@ -1,25 +1,95 @@
 <scroll-view class="scroll_view"
              type="custom"
-             scroll-y="{{focusIndex == 0}}"
+             scroll-y
+             scroll-with-animation="{{true}}"
 >
-  <view class="room_box">
-    <view class="room"
-          hover-class="hover"
-          bind:tap="handleRoomTap"
-    >{{houseIndex + '-' + roomIndex}}</view>
-  </view>
-  <tenant-information value="{{tenantMessage}}"
-  ></tenant-information>
-  <bill value="{{waterBill}}"
-        prefix="water"
-  ></bill>
-  <bill value="{{electricityBill}}"
-        prefix="electricity"
-  ></bill>
-  <sundry value="{{sundry}}"
-  ></sundry>
-  <view class="unit_box total">
-    <text class="unit_head">total</text>
-    
+  <view class="root">
+    <view class="room_head">
+      <view class="room_info"
+             hover-class="hover"
+             bind:tap="handleRoomTap"
+      >{{houseIndex + '-' + roomIndex}}</view>
+    </view>
+    <view class="btn_group">
+      <custom-button button-name="blue_editinfo"
+                    status="{{status}}"
+                    bind:editinfo="handleEditInfo"
+      ></custom-button>
+    </view>
+    <view class="unit_group"
+          bind:changedata="handleChangeData"
+          bind:focus="handleFocus"
+          bind:unfocus="handleUnfocus"
+    >
+      <tenant-information value="{{tenantInformation}}"
+                          status="{{status}}"
+                          rental="{{basicExpense[0][1]}}"
+      ></tenant-information>
+      <bill value="{{waterBill}}"
+            prefix="water"
+            status="{{status}}"
+            cost="{{basicExpense[1][1]}}"
+      ></bill>
+      <bill value="{{electricityBill}}"
+            prefix="electricity"
+            status="{{status}}"
+            cost="{{basicExpense[2][1]}}"
+      ></bill>
+      <other-expense value="{{otherExpense}}"
+                     status="{{status}}"
+                     bind:addexpense="handleAddExpense"
+                     bind:removeexpense="handleRemoveExpense"
+                     bind:removeitem="handleRemoveItem"
+      ></other-expense>
+    </view>
+    <view class="unit_box">
+      <view class="unit_head">
+        <text style="flex: 1">total</text>
+        <view class="total_box"
+              style="background-color: {{showExpense ? '#fff0dd' : ''}};"
+              hover-class="total_hover"
+              hover-stay-time="120"
+              bind:tap="handleShowExpense"
+        >
+        {{totalExpense}}
+          <image class="currency_yuan" 
+                 src="../../public/symbols/currency_yuan.svg"
+          ></image>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{showExpense}}"
+          class="expense_box"
+    >
+      <view wx:for="{{expense}}"
+            class="expense_item"
+            style="background-color: {{item[2] ? '#fff0dd' : ''}};"
+            data-id="{{index}}"
+            bind:tap="handleEditExpense"
+      >{{item[0]}}:{{item[1]}}</view>
+    </view>
+    <view class="remark_area">
+      <text>备注：</text>
+      <scroll-view class="remark_box"
+                   scroll-y
+                   type="custom"
+                   bind:tap="handleFocusTextArea"
+      >
+        <text class="remark_text"
+              style="display: {{showTextArea ? 'none': 'block'}};"
+        >{{remark}}</text>
+      </scroll-view>
+    </view>
+    <root-portal>
+      <textarea wx:if="{{showTextArea}}"
+                class="remark_input"
+                focus="{{true}}"
+                placeholder="{{remark}}"
+                bind:blur="handleBlurTextArea"
+      ></textarea>
+    </root-portal>
+    <view class="screen_cover {{showTextArea ? 'blur_view' : ''}} {{cover ? '' : 'hide'}}"
+          bind:tap="handleUnfocus"
+    ></view>
   </view>
 </scroll-view>

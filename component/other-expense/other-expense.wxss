@@ -1,0 +1,13 @@
+/* component/sundry/sundry.wxss */
+.input_group {
+  flex: 2;
+  display: flex;
+}
+
+.expense_input {
+  flex: 1;
+  height: 100%;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+  background-color: #dcfae3;
+}

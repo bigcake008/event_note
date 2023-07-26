@@ -1,23 +1,22 @@
 // component/editable-text/editable-text.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
-
+    text: {
+      type: String,
+    }
   },
 
-  /**
-   * 组件的初始数据
-   */
   data: {
-
+    showInput: false,
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
-
+    handleShowInput: function() {
+      this.setData({showInput: true});
+    },
+    handleBlur: function() {
+      console.log("textarea blur");
+      this.setData({showInput: false});
+    },
   }
 })

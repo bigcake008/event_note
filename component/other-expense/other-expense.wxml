@@ -1,0 +1,84 @@
+<!--component/sundry/sundry.wxml-->
+<view class="unit_box"
+      style="height: {{expand ? expandHeight : 100}}rpx;"
+>
+  <view class="unit_head">
+    <text class="unit_title">other_expense</text>
+    <custom-button button-name="{{expand ? 'grey_expandless' : 'grey_expandmore'}}"
+                   bind:expandmore="handleExpandUnit"
+                   bind:expandless="handleExpandUnit"
+    ></custom-button>
+  </view>
+  <view class="unit_content">
+    <view wx:for="{{value}}"
+          class="item_list"
+          style="color: {{status == 'removeexpense' ? '#ed414c' : ''}}; background-color: {{removeIndex[index] ? '#ffd7d5' : ''}};"
+          hover-class="{{status == 'removeexpense' ? 'remove_hover' : ''}}"
+          hover-stay-time="100"
+          data-index="{{index}}"
+          bind:tap="handleRemoveItem"
+    >
+      <view id="{{'key-'+index}}"
+            class="item_box"
+            hover-class="{{status == 'editinfo' ? 'edit_hover' : ''}}"
+            hover-stay-time="100"
+            bind:tap="handleFocusInput"
+      >
+        <text class="item_text"
+              style="color: {{status == 'editinfo' ? '#54aeff' : ''}};"
+        >{{item[0]}}：</text>
+        <input wx:if="{{focusIndex == 'key-'+index}}"
+               class="item_input"
+               focus="{{true}}"
+               placeholder="{{item[0]}}"
+               type="text"
+               data-key="{{'4-'+index+'-0'}}"
+               bind:blur="handleBlurInput"
+        />
+      </view>
+      <view id="{{'value-'+index}}"
+            class="item_box"
+            hover-class="{{status == 'editinfo' ? 'edit_hover' : ''}}"
+            hover-stay-time="100"
+            bind:tap="handleFocusInput"
+      >
+        <text class="item_text"
+              style="color: {{status == 'editinfo' ? '#54aeff' : ''}};"
+        >{{item[1]}}</text>
+        <input wx:if="{{focusIndex == 'value-'+index}}"
+               class="item_input"
+               focus="{{true}}"
+               placeholder="{{item[1]}}"
+               type="digit"
+               data-key="{{'4-'+index+'-1'}}"
+               bind:blur="handleBlurInput"
+        />
+      </view>
+    </view>
+    <view class="item_list">
+      <view class="btn_group"
+            bind:addexpense="handleAddExpense"
+            bind:removeexpense="handleRemoveExpense"
+      >
+        <custom-button button-name="red_removeexpense"
+                       status="{{status}}"
+        ></custom-button>
+        <custom-button button-name="green_addexpense"
+                       status="{{status}}"
+        ></custom-button>
+      </view>
+      <view class="input_group"
+            style="visibility: {{status == 'addexpense' ? 'visible' : 'hidden'}};"
+      >
+        <input class="expense_input"
+               placeholder="key" 
+               focus="{{status == 'addexpense'}}"
+        />
+        <span style="padding-top: 10rpx;">：</span>
+        <input class="expense_input"
+               placeholder="value"
+        />
+      </view>
+    </view>
+  </view>
+</view>

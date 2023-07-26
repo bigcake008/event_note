@@ -30,7 +30,7 @@
 }
 .hover {
   background-color: #ecebeb;
-  border-radius: 15rpx;
+  border-radius: 10rpx;
 }
 
 .removehouse {

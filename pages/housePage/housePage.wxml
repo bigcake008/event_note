@@ -30,7 +30,7 @@
            bind:roomtap="handleRoomTap"
            bind:focus="handleFocus"
     ></floor>
-    <view class="glass_view {{focusIndex == 0 ? 'hide' : ''}}" 
+    <view class="screen_cover blur_view {{focusIndex == 0 ? 'hide' : ''}}" 
           bind:tap="handleUnfocus"
     ></view>
   </view>

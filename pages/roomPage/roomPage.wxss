@@ -1,21 +1,27 @@
 /* pages/roomPage/roomPage.wxss */
-.room_box {
-  margin-top: 100rpx;
-  margin-bottom: 30rpx;
+.room_head {
   height: 100rpx;
   display: flex;
   justify-content: center;
 }
 
-.room {
+.room_info {
   padding-top: 20rpx;
   font-size: 60rpx;
   border-radius: 15rpx;
 }
 
+.btn_group {
+  margin-left: 20rpx;
+  margin-bottom: 10rpx;
+  flex: 1;
+  display: flex;
+}
+
+
+
 .unit_box {
   margin: 0 20rpx;
-  height: 100rpx;
   border-style: solid none none none;
   font-size: 50rpx;
   display: flex;
@@ -24,35 +30,123 @@
   transition: height 0.5s;
 }
 
-.total {
-  margin-bottom: 100rpx;
+.unit_head {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
 }
 
-.unit_head {
+.unit_title {
   flex: 1;
 }
 
 .unit_content {
+  margin-bottom: 50rpx;
   width: 100%;
-  padding: 20rpx 20rpx;
   font-size: 46rpx;
 }
 
 .item_list {
+  margin-bottom: 10rpx;
   height: 80rpx;
+  border-radius: 10rpx;
+  display: flex;
+  transition: height 0.2s;
+}
+
+.item_box {
+  flex: 1;
+  border-radius: 10rpx;
+  overflow: hidden;
   display: flex;
 }
 
-.item_key {
-  flex: 1;
+.item_text {
+  padding-top: 10rpx;
+  padding-left: 20rpx;
 }
 
-.item_value {
-  flex: 1;
+.item_input {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+  background-color: #ddf4ff;
 }
 
-.expand {
-  height: auto;
+.edit_hover {
+  background-color: #ddf4ff;
+}
+
+.remove_hover {
+  background-color: #ffd7d5;
+}
+
+.total_box {
+  margin: 10rpx;
+  flex: 1;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: flex-end;
+  color: #f9ba6c;
+  overflow: hidden;
+}
+
+.total_hover {
+  background-color: #fff0dd;
+}
+
+.currency_yuan {
+  position: relative;
+  top: 5rpx;
+  right: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.expense_box {
+  padding: 10rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.expense_item {
+  margin: 10rpx;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  font-size: 38rpx;
+  color: #f9ba6c;
+}
+
+.remark_area {
+  margin-bottom: 100rpx;
+  padding: 20rpx;
+  display: flex;
+  font-size: 46rpx;
+}
+
+.remark_box {
+  flex: 4;
+  height: 240rpx;
+  border: 5rpx solid black;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 40rpx;
+}
+
+.remark_input {
+  position: absolute;
+  margin: 0 10%;
+  bottom: 40vh;
+  width: 80%;
+  height: 200rpx;
+  border: 5rpx solid black;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 40rpx;
+  background-color: white;
 }
 
 .hover {

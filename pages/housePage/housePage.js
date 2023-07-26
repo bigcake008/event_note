@@ -2,7 +2,7 @@
 const floors = [
                 {
                   index: 10,
-                  rooms: ["1001", "1002", "1003", "1004", "1005"]
+                  rooms: ["1001", "1002", "1003", "1004", "100000005"]
                 },               {
                   index: 9,
                   rooms: ["901", "902", "903"]
@@ -80,10 +80,10 @@ Page({
   },
   
   handleRoomTap: function(evt) {
-    const hid = this.data.index;
-    const rid = evt.detail.index;
+    const houseIndex = this.data.index;
+    const roomIndex = evt.detail.index;
     wx.navigateTo({
-      url: `../roomPage/roomPage?hid=${hid}&rid=${rid}`,
+      url: `../roomPage/roomPage?houseIndex=${houseIndex}&roomIndex=${roomIndex}`,
     });
   },
 
