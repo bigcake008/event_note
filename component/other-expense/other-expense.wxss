@@ -10,4 +10,5 @@
   border-radius: 10rpx;
   padding-left: 20rpx;
   background-color: #dcfae3;
+  font-size: 40rpx;
 }

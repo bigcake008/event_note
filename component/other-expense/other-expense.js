@@ -14,6 +14,8 @@ Component({
     expand: false,
     expandHeight: 100,
     removeIndex: [],
+    newExpenseKey: "",
+    newExpenseValue: "",
   },
 
   options: {
@@ -71,12 +73,30 @@ Component({
     },
 
     handleAddExpense: function() {
-      this.triggerEvent(
+      console.log(this.data.newExpenseKey);
+      console.log(this.data.newExpenseValue);
+      if (this.properties.status === "addexpense" && this.data.newExpenseKey !== "") {
+        this.triggerEvent(
+          "additem",
+          {
+            key: this.data.newExpenseKey,
+            value: Number(this.data.newExpenseValue),
+          },
+          {bubbles: true},
+        );
+
+      }
+      this.setData({
+        newExpenseKey: "",
+        newExpenseValue: "",
+      });
+      this.triggerEvent( 
         "addexpense",
         {},
         {bubbles: true},
-      )
+      );
     },
+
 
     handleRemoveExpense: function() {
       if (this.properties.status === "removeexpense") {

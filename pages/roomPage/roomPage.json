@@ -3,7 +3,6 @@
     "custom-button": "../../component/custom-button/custom-button",
     "tenant-information": "../../component/tenant-information/tenant-information",
     "bill": "../../component/bill/bill",
-    "other-expense": "../../component/other-expense/other-expense",
-    "editable-text": "../../component/editable-text/editable-text"
+    "other-expense": "../../component/other-expense/other-expense"
   }
 }

@@ -96,6 +96,15 @@ Component({
       });
     },
 
+    handleAddItem: function(evt) {
+      const newItem = [evt.detail.key, evt.detail.value, true];
+      const otherExpense = this.data.otherExpense;
+      otherExpense.push(newItem);
+      this.setData({
+        otherExpense,
+      })
+    },
+
     handleRemoveExpense: function(evt) {
       const status = this.data.status === "removeexpense" ? "" : "removeexpense";
       this.setData({
@@ -130,10 +139,15 @@ Component({
       });
     },
 
-    handleBlurTextArea: function() {
+    handleBlurTextArea: function(evt) {
+      let remark = this.data.remark;
+      if (evt.detail.value !== "") {
+        remark = evt.detail.value;
+      }
       this.setData({
         showTextArea: false,
         cover: false,
+        remark,
       });
     },
 

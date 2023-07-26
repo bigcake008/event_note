@@ -39,6 +39,7 @@
                      status="{{status}}"
                      bind:addexpense="handleAddExpense"
                      bind:removeexpense="handleRemoveExpense"
+                     bind:additem="handleAddItem"
                      bind:removeitem="handleRemoveItem"
       ></other-expense>
     </view>

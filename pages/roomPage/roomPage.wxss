@@ -74,6 +74,7 @@
   border-radius: 10rpx;
   padding-left: 20rpx;
   background-color: #ddf4ff;
+  font-size: 40rpx;
 }
 
 .edit_hover {

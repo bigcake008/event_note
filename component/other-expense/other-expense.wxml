@@ -67,16 +67,20 @@
                        status="{{status}}"
         ></custom-button>
       </view>
-      <view class="input_group"
-            style="visibility: {{status == 'addexpense' ? 'visible' : 'hidden'}};"
+      <view wx:if="{{status == 'addexpense'}}"
+            class="input_group"
       >
         <input class="expense_input"
+               type="text"
                placeholder="key" 
                focus="{{status == 'addexpense'}}"
+               model:value="{{newExpenseKey}}"
         />
         <span style="padding-top: 10rpx;">：</span>
         <input class="expense_input"
+               type="digit"
                placeholder="value"
+               model:value="{{newExpenseValue}}"
         />
       </view>
     </view>

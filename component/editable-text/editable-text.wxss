@@ -1,7 +1,0 @@
-/* component/editable-text/editable-text.wxss */
-.scroll_box {
-  height: 200rpx;
-}
-.textarea_box {
-  height: 200rpx;
-}
