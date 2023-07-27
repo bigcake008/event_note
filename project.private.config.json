@@ -3,7 +3,7 @@
   "projectname": "event_note",
   "setting": {
     "compileHotReLoad": true,
-    "skylineRenderEnable": false
+    "skylineRenderEnable": true
   },
   "libVersion": "2.33.0"
 }

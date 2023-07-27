@@ -17,7 +17,7 @@
             style="color: {{status == 'editinfo' ? '#54aeff' : ''}}; background-color: {{highlightPicker == 'pre-date' ? '#ddf4ff' : ''}};"
             bind:tap="handlePickerTap"
       >
-        <picker class="item_text"
+        <picker class="item_text item_picker"
                 mode="date" 
                 disabled="{{status != 'editinfo'}}"
                 data-key="{{prefix == 'water' ? '1-0' : '2-0'}}"
@@ -52,7 +52,7 @@
             style="color: {{status == 'editinfo' ? '#54aeff' : ''}}; background-color: {{highlightPicker == 'cur-date' ? '#ddf4ff' : ''}};"
             bind:tap="handlePickerTap"
       >
-        <picker class="item_text"
+        <picker class="item_text item_picker"
                 mode="date" 
                 disabled="{{status != 'editinfo'}}"
                 data-key="{{prefix == 'water' ? '1-2' : '2-2'}}"
@@ -116,5 +116,14 @@
         <text class="item_text">{{cost}}</text>
       </view>
     </view>
+    <!-- <view class="item_list">
+      <view class="btn_group"
+            bind:updateusage="handleUpdateUsage"
+      >
+        <custom-button button-name="blue_updateusage"
+                       status="{{status}}"
+        ></custom-button>
+      </view>
+    </view> -->
   </view>
 </view>

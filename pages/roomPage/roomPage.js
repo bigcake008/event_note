@@ -21,7 +21,7 @@ const room_detail = [
   "hello world, goodbye, hello again, farewell, see you,my lovely friend! enjoy your dinner, be my guest, no worry, hahaha",
 ];
 
-const { shared } = wx.worklet;
+const { shared, timing, Easing } = wx.worklet;
 
 Component({
   properties: {
@@ -50,6 +50,8 @@ Component({
 
   methods: {
     onLoad: function() {
+      const opacity = shared(0);
+      this.opacity = opacity;
       let totalExpense = this.data.expense.reduce((a, c) => {
         return c[2] ? a + c[1] : a;
       }, 0);
@@ -222,7 +224,8 @@ Component({
         expense,
         totalExpense,
       });
-    }
+    },
+
   }
 
 })

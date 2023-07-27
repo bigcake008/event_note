@@ -1,6 +1,11 @@
 // component/sundry/sundry.js
+import { inputBehavior } from "../../public/module/form-behavior";
 
 Component({
+  behaviors: [
+    inputBehavior,
+  ],
+
   properties: {
     value: {
       type: Array,
@@ -39,42 +44,20 @@ Component({
       this.setData({expand: !this.data.expand});
     },
 
-    handleFocusInput: function(evt) {
-      // only show input in editinfo status
-      if (this.properties.status !== "editinfo") {
-        return;
-       }
-      this.setData({
-        focusIndex: evt.currentTarget.id,
-      });
-      this.triggerEvent(
-        "focus",
-        {},
-        {bubbles: true},
-      );
-    },
-
-    handleBlurInput: function(evt) {
-      this.setData({
-        focusIndex: "",
-      });
-      const value = evt.detail.value;
-      if (value === "" || value === evt.target.dataset.value) {
-        return;
+    handleChangeExpense: function(evt) {
+      console.log(evt);
+      if (evt.target.id === "expense-key") {
+        this.setData({
+          newExpenseKey: evt.detail.value,
+        });
+      } else {
+        this.setData({
+          newExpenseValue: evt.detail.value,
+        });
       }
-      this.triggerEvent(
-        "changedata",
-        {
-          key: evt.target.dataset.key,
-          value: value,
-        },
-        {bubbles: true},
-      );
     },
 
     handleAddExpense: function() {
-      console.log(this.data.newExpenseKey);
-      console.log(this.data.newExpenseValue);
       if (this.properties.status === "addexpense" && this.data.newExpenseKey !== "") {
         this.triggerEvent(
           "additem",

@@ -40,12 +40,13 @@
       <view class="item_box">
         <text class="item_text">入住日期：</text>
      </view>
-      <view class="item_box"
+      <view id="in-date"
+            class="item_box"
             hover-class="{{status == 'editinfo' ? 'edit_hover' : ''}}"
-            style="color: {{status == 'editinfo' ? '#54aeff' : ''}}; background-color: {{highlightPicker ? '#ddf4ff' : ''}};"
+            style="color: {{status == 'editinfo' ? '#54aeff' : ''}}; background-color: {{highlightPicker == 'in-date' ? '#ddf4ff' : ''}};"
             bind:tap="handlePickerTap"
       >
-        <picker class="item_text"
+        <picker class="item_text item_picker"
                 mode="date" 
                 disabled="{{status != 'editinfo'}}"
                 data-key="0-4"
