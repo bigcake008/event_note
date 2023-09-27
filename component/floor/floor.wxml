@@ -40,7 +40,7 @@
   </view>
   <view class="rooms_group">
     <view wx:for="{{rooms}}"
-          wx:key="item"
+          wx:key="*this"
           class="room_box {{status}}"
           hover-class="{{status}}_hover"
           hover-stay-time="120"

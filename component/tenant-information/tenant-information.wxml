@@ -11,6 +11,7 @@
   </view>
   <view class="unit_content">
     <view wx:for="{{key}}"
+          wx:key="*this"
           class="item_list"
     >
       <view class="item_box">

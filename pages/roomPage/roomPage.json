@@ -4,5 +4,6 @@
     "tenant-information": "../../component/tenant-information/tenant-information",
     "bill": "../../component/bill/bill",
     "other-expense": "../../component/other-expense/other-expense"
-  }
+  },
+  "navigationStyle": "custom"
 }

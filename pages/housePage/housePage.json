@@ -4,5 +4,6 @@
     "house": "/component/house/house",
     "floor": "/component/floor/floor"
   },
-  "navigationBarTitleText": "house"
+  "navigationBarTitleText": "house",
+  "navigationStyle": "custom"
 }

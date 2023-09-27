@@ -11,6 +11,7 @@
   </view>
   <view class="unit_content">
     <view wx:for="{{value}}"
+          wx:key="0"
           class="item_list"
           style="color: {{status == 'removeexpense' ? '#ed414c' : ''}}; background-color: {{removeIndex[index] ? '#ffd7d5' : ''}};"
           hover-class="{{status == 'removeexpense' ? 'remove_hover' : ''}}"

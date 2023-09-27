@@ -63,6 +63,7 @@
           class="expense_box"
     >
       <view wx:for="{{expense}}"
+            wx:key="0"
             class="expense_item"
             style="background-color: {{item[2] ? '#fff0dd' : ''}};"
             data-id="{{index}}"
@@ -86,7 +87,6 @@
                   class="remark_input"
                   focus="{{showTextArea}}"
                   placeholder="{{remark}}"
-                  bind:focus="handleFocusArea"
                   bind:blur="handleBlurTextArea"
         ></textarea>
       </root-portal>

@@ -15,7 +15,7 @@
     <view class="house_list {{focus}}">
       <house 
             wx:for="{{house}}"
-            wx:key="index" 
+            wx:key="index"
             index="{{item.index}}" 
             location="{{item.location}}"
             status="{{status}}" 
@@ -32,7 +32,6 @@
     >
       <custom-button 
             wx:for="{{button}}" 
-            wx:key="index" 
             button-name="{{item}}" 
             status="{{status}}" 
             bind:tap="handleFocus"
