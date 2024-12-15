@@ -1,7 +1,7 @@
 // index.js
 let house = 
     [
-    {'index': 1, 'location': 'hahahaha'},
+    {'index': 1, 'location': 'HelloWorld'},
     {'index': 22, 'location': 'generator and iterator'},
     {'index': 99999, 'location': 'hello world, good night, good bye!!!'},
     {'index': 100, 'location': 'proxy confuse people'},
